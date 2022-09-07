@@ -1,11 +1,12 @@
 package com.bridgelabz.addressbooksystem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 public class AddressBook implements AddressBookIF {
-    Map<String, ContactPerson> contactList = new HashMap<String, ContactPerson>();
-    public static String addressBookName;
+    Map<String, ContactPerson> contactList = new HashMap<>();
+    public String addressBookName;
     Scanner scannerObject = new Scanner(System.in);
     boolean isPresent = false;
 
@@ -18,6 +19,9 @@ public class AddressBook implements AddressBookIF {
     public void setAddressBookName(String addressBookName) {
 
         this.addressBookName = addressBookName;
+    }
+    public ArrayList<ContactPerson> getContact() {
+        return new ArrayList<ContactPerson>(contactList.values());
     }
 
     @Override
